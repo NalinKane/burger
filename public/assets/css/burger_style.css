@@ -16,9 +16,9 @@ body {
   white-space: nowrap !important; /* 3 */
 }
 
-.burger-container {
+.burger-container,
+.all-burgers {
   display: flex;
-  text-align: center;
 }
 
 .burger-box {

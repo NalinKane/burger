@@ -21,6 +21,8 @@ async function addNewBurger(e) {
   }
 }
 
+// SERVICES
+
 function createBurger(burger) {
   return fetch("/api/burgers", {
     method: "POST",
