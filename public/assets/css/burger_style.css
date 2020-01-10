@@ -16,8 +16,18 @@ body {
   white-space: nowrap !important; /* 3 */
 }
 
+h1 {
+  text-align: center;
+}
+
+.all-burgers,
+.create-form {
+  justify-content: center;
+}
+
 .burger-container,
-.all-burgers {
+.all-burgers,
+.create-form {
   display: flex;
 }
 
@@ -25,4 +35,16 @@ body {
   background: #fff;
   margin: 16px;
   width: 250px;
+}
+
+.create-form {
+  margin-top: 32px;
+}
+
+.form-inner {
+  text-align: center;
+}
+
+.fresh {
+  margin-right: 64px;
 }
