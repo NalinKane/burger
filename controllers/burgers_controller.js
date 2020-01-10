@@ -12,7 +12,18 @@ router.get("/", function(req, res) {
   });
 });
 
-// POST;
+// devour a burger
+router.post("/api/burgers", function(req, res) {
+  burger.devour(
+    ["burger_name", "devoured"],
+    [req.body.burger_name, false],
+    function(result) {
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
+    }
+  );
+});
+
 // PUT;
 
 // Export routes for server.js to use.

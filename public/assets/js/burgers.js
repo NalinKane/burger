@@ -5,24 +5,28 @@ function init() {
   form.addEventListener("submit", addNewBurger);
 }
 
-function addNewBurger(e) {
+async function addNewBurger(e) {
   const burgerInput = document.querySelector("#newBurger");
   e.preventDefault();
-  console.log(burgerInput.value);
 
-  const data = {
+  const burger = {
     burger_name: burgerInput.value
   };
 
-  fetch("/api/burgers", {
+  try {
+    await createBurger(burger);
+    location.reload();
+  } catch (err) {
+    console.error("Error: ", err);
+  }
+}
+
+function createBurger(burger) {
+  return fetch("/api/burgers", {
     method: "POST",
-    body: JSON.stringify(data)
-  })
-    .then(() => {
-      console.log("Added new burger");
-      location.reload();
-    })
-    .catch(error => {
-      console.error("Error:", error);
-    });
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(burger)
+  });
 }

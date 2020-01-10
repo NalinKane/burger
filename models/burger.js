@@ -5,6 +5,11 @@ const burger = {
     orm.all("burger", function(res) {
       cb(res);
     });
+  },
+  devour: function(cols, vals, cb) {
+    orm.create("burger", cols, vals, function(res) {
+      cb(res);
+    });
   }
 };
 
