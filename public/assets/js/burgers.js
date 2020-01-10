@@ -14,6 +14,11 @@ async function addNewBurger(e) {
   const burgerInput = document.querySelector("#newBurger");
   e.preventDefault();
 
+  if (!burgerInput.value) {
+    alert("Please add a burger!");
+    return;
+  }
+
   const burger = {
     burger_name: burgerInput.value
   };
